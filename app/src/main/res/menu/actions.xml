@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_control_point_black_24dp"
+        android:title="@string/add"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action1"
+        android:icon="@drawable/ic_airline_seat_flat_angled_black_24dp"
+        android:title="@string/action1"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action2"
+        android:icon="@drawable/ic_airline_seat_flat_angled_black_24dp"
+        android:title="@string/action2"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action3"
+        android:icon="@drawable/ic_airline_seat_flat_angled_black_24dp"
+        android:title="@string/action3"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action4"
+        android:icon="@drawable/ic_airline_seat_flat_angled_black_24dp"
+        android:title="@string/action4"
+        app:showAsAction="ifRoom"/>
+
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+        android:title="@string/settings"
+        app:showAsAction="never"/>
+
+</menu>
