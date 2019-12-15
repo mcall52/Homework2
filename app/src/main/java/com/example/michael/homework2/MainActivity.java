@@ -1,5 +1,6 @@
 package com.example.michael.homework2;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(DEBUG_TAG, "onCreate called");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -28,6 +31,19 @@ public class MainActivity extends AppCompatActivity implements
         mDetector = new GestureDetectorCompat(this,this);
         mDetector.setOnDoubleTapListener(this);
         makeMeASnackbar("Why Hello!");
+
+        //Draw snowman
+        final SnowmanView snowman = (SnowmanView) findViewById(R.id.snowmanview);
+        snowman.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                SnowmanView localSnowman = (SnowmanView) v;
+                Log.d(DEBUG_TAG, "Clicked Snowman view");
+                localSnowman.setScalar(2);
+                localSnowman.invalidate();
+            }
+
+        });
+
     }
 
     @Override
@@ -37,8 +53,23 @@ public class MainActivity extends AppCompatActivity implements
         return true;
     }
 
+    public void viewNumbers(View view){
+        Intent intent = new Intent(this, Numbers.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        //use switch statement for each button's functionality
+        //switch(item.getItemId()) {
+        Intent intent = new Intent(this, Numbers.class);
+        startActivity(intent);
+
+        return true;
+    }
+
     public void makeMeASnackbar(String message) {
-        Snackbar.make(findViewById(R.id.myCoordinatorLayout), message, Snackbar.LENGTH_SHORT).show();
+        //Snackbar.make(findViewById(R.id.myCoordinatorLayout), message, Snackbar.LENGTH_SHORT).show();
     }
 
     @Override

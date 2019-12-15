@@ -29,10 +29,12 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-    <TextView
+    <com.example.michael.homework2.SnowmanView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textColor="@android:color/black"/>
+        android:id="@+id/snowmanview"
+        class = "com.example.michael.homework2.SnowmanView">
+        </com.example.michael.homework2.SnowmanView>
+
 </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
